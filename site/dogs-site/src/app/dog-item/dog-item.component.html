@@ -1,10 +1,8 @@
 <div class="card">
-    <img class="image" src="{{ dog.imgUrl }}" />
+    <div class="img-card" [ngStyle]="{ 'background-image': 'url(' + dog.imgUrl + ')' }"></div>
     <div class="content">
         <h4 class="title">{{ dog.breed }}</h4>
-        <div class="description">{{ dog.age}} . {{ dog.size }}</div>
+        <div class="description">{{ dog.age}} years old <span class="separator">•</span> {{ dog.size }}</div>
     </div>
-    <div class="footer">
-        <ng-content></ng-content>
-    </div>
+    <ng-content></ng-content>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DogItem } from '../shared/contracts/models/dog-item.model';
 import { CheckoutService } from '../shared/contracts/checkout.service';
 import { DoggyService } from '../shared/contracts/doggy.service';
@@ -10,13 +10,13 @@ import { DoggyService } from '../shared/contracts/doggy.service';
 })
 export class CheckoutComponent {
   checkout: DogItem[];
-  constructor(checkoutService: CheckoutService<DogItem>, private doggyService: DoggyService<DogItem>) {
-    checkoutService.getCheckout().subscribe(adoptionDogs => this.checkout = adoptionDogs);
+  constructor(private checkoutService: CheckoutService<DogItem>, private doggyService: DoggyService<DogItem>) {
+    this.checkoutService.getCheckout().subscribe(adoptionDogs => this.checkout = adoptionDogs);
   }
 
   onAdoptDogs(checkout: DogItem[]): void{
     this.doggyService.adoptDogs(checkout).subscribe(adopted => {
-      this.checkout = [];
+      adopted.forEach(dog => this.checkoutService.removeItem(dog));
     });
   }
 

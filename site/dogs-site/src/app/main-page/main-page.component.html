@@ -1,3 +1,3 @@
-<div *ngFor="let dog of dogs">
-    <app-adopt-dog-item [dog]="dog" (adoptDog)="onAdopt($event)"></app-adopt-dog-item>
-</div>
+<app-list>
+    <app-adopt-dog-item *ngFor="let dog of dogs" [dog]="dog" (adoptDog)="onAdopt($event)"></app-adopt-dog-item>
+</app-list>

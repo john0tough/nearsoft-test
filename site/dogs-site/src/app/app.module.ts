@@ -15,6 +15,8 @@ import { CheckoutService } from './shared/contracts/checkout.service';
 import { DogsHttpClient } from './shared/dogs-http-client.service';
 import { AdoptionDoggyService } from './shared/adoption-doggy.service';
 import { AdoptionCheckoutService } from './shared/adoption-checkout.service';
+import { ListComponent } from './list/list.component';
+import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -23,7 +25,9 @@ import { AdoptionCheckoutService } from './shared/adoption-checkout.service';
         AdoptionsComponent,
         CheckoutComponent,
         AdoptDogItemComponent,
-        CheckoutDogItemComponent
+        CheckoutDogItemComponent,
+        ListComponent,
+        NavbarComponent
     ],
     imports: [
         BrowserModule,

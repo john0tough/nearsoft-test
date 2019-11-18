@@ -1,5 +1,5 @@
 <h3>Your new friends!</h3>
-<div *ngFor="let item of checkout">
-    <app-checkout-dog-item [dog]="item"></app-checkout-dog-item>
+<div class="list-cards list-checkout">
+    <app-checkout-dog-item [dog]="item" *ngFor="let item of checkout"></app-checkout-dog-item>
 </div>
-<button (click)="onAdoptDogs(checkout)">SUBMIT ADOPTION!</button>
+<a *ngIf="checkout.length > 0" class="btn" (click)="onAdoptDogs(checkout)">SUBMIT ADOPTION!</a>

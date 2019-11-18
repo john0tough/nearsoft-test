@@ -8,6 +8,5 @@ import { DogItem } from './shared/contracts/models/dog-item.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'dogs-site';
 
 }
