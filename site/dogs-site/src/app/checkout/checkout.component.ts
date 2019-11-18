@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { DogItem } from '../shared/contracts/models/dog-item.model';
 import { CheckoutService } from '../shared/contracts/checkout.service';
 import { DoggyService } from '../shared/contracts/doggy.service';

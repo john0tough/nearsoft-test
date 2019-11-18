@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DogItem } from '../shared/contracts/models/dog-item.model';
 
 @Component({

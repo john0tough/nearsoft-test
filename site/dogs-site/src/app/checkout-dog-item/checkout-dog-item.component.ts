@@ -1,12 +1,11 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DogItem } from '../shared/contracts/models/dog-item.model';
 import { CheckoutService } from '../shared/contracts/checkout.service';
 
 @Component({
   selector: 'app-checkout-dog-item',
   templateUrl: './checkout-dog-item.component.html',
-  styleUrls: ['./checkout-dog-item.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./checkout-dog-item.component.scss']
 })
 export class CheckoutDogItemComponent {
   @Input() dog: DogItem;
