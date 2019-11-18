@@ -12,7 +12,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { APIClient } from './shared/contracts/http-client.service';
 import { DoggyService } from './shared/contracts/doggy.service';
 import { CheckoutService } from './shared/contracts/checkout.service';
-import { DogsHttpClient } from './shared/dogs-http-client.service';
+import { DogAPIClient } from './shared/dogs-http-client.service';
 import { AdoptionDoggyService } from './shared/adoption-doggy.service';
 import { AdoptionCheckoutService } from './shared/adoption-checkout.service';
 import { ListComponent } from './list/list.component';
@@ -35,7 +35,7 @@ import { NavbarComponent } from './navbar/navbar.component';
         HttpClientModule
     ],
     providers: [
-        { provide: APIClient, useClass: DogsHttpClient },
+        { provide: APIClient, useClass: DogAPIClient },
         { provide: DoggyService, useClass: AdoptionDoggyService },
         { provide: CheckoutService, useClass: AdoptionCheckoutService },
     ],

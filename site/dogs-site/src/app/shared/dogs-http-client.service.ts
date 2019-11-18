@@ -1,9 +1,9 @@
 import { APIClient } from './contracts/http-client.service';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 @Injectable()
-export class DogsHttpClient implements APIClient {
+export class DogAPIClient implements APIClient {
     private url = 'http://localhost:3333/api';
     constructor(private http: HttpClient) {}
 
