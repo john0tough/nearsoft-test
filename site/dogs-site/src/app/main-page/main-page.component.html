@@ -1,3 +1,4 @@
+<div *ngIf="dogs.length === 0">Cargando...</div>
 <app-list>
     <app-adopt-dog-item *ngFor="let dog of dogs" [dog]="dog" (adoptDog)="onAdopt($event)"></app-adopt-dog-item>
 </app-list>

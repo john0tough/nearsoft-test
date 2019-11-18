@@ -15,7 +15,7 @@ export class AdoptionDoggyService implements DoggyService<DogItem> {
                 return this.getAdoptionInformation(
                     '/dogs/adoptions',
                     this.mapToAdoptedDog
-                ).pipe(tap(r => console.log(r)));
+                );
             case DogStatus.ForAdoption:
                 return this.getAdoptionInformation(
                     '/dogs',
@@ -37,7 +37,7 @@ export class AdoptionDoggyService implements DoggyService<DogItem> {
     }
 
     private mapToDog = (response: { dogs: DogItem[] }): DogItem[] => response.dogs;
-    private mapToAdoptedDog = (response: { adoptions: DogItem[] }): DogItem[] => {console.log(response);return response.adoptions};
+    private mapToAdoptedDog = (response: { adoptions: DogItem[] }): DogItem[] =>  response.adoptions;
 
     private getAdoptionInformation<T>(
         resource: string,

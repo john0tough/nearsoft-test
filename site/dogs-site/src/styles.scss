@@ -27,10 +27,6 @@
     margin-bottom: 20px;
     box-shadow: 0px 1px 10px grey;
 }
-.container{
-    padding-left: 15px;
-    padding-right: 15px;
-}
 
 .list-cards {
     display: flex;
@@ -40,8 +36,8 @@
     .card {
         min-width: 300px;
         margin: 10px;
-        border-radius: 5px;
         background-color: white;
+        border-radius: 5px;
         box-shadow: 0px 0px 5px grey;
     }
     .img-card {
@@ -60,6 +56,13 @@
         margin-block-start: 0px;
         margin-block-end: 3px;
     }
+    .footer {
+        border-top: 1px solid #d2d2d6;
+        padding-top: 10px;
+        margin-left: 10px;
+        padding-bottom: 20px;
+        margin-right: 10px;
+    }
   &.list-checkout {
     display: flex;
     flex-direction: column;
@@ -67,6 +70,8 @@
         display: flex;
         padding: 15px;
         align-items: center;
+        border-radius: initial;
+        box-shadow: initial;
     }
     .img-card {
         height: 100px;
@@ -80,6 +85,15 @@
     }
   }  
 }
+body {
+    background-color: #f8f8ff;
+    margin: 0px;
+    font-family: sans-serif;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+}
 .btn {
     padding: 10px;
     background-color: #6e8ccc;
@@ -92,13 +106,7 @@
     background-color: #dc7092;
 }
 
-.footer {
-    border-top: 1px solid #d2d2d6;
-    padding-top: 10px;
-    margin-left: 10px;
-    padding-bottom: 20px;
-    margin-right: 10px;
-}
+
 .counter{
     display: inline-block;
     background-color: red;

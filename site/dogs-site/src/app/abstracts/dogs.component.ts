@@ -1,9 +1,13 @@
-import { Observable } from 'rxjs';
-import { AdoptionDogItem } from '../shared/contracts/models/adoption-dog-item.model';
+import { DogItem } from '../shared/contracts/models/dog-item.model';
+import { Observable, Subscription } from 'rxjs';
 
 export abstract class DogsComponent {
-    dogs: AdoptionDogItem[];
-
-    constructor() {
+    dogs: DogItem[] = [];
+    private subscription: Subscription;
+    constructor(dogs$: Observable<DogItem[]>) {
+        this.subscription = dogs$.subscribe(dogs => this.dogs = dogs );
+    }
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
     }
 }
