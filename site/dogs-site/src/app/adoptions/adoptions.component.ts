@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { httpClient } from '../shared/contracts/http-client.service';
-import { DogItem } from '../shared/contracts/models/dog-item.model';
 import { DogsComponent } from '../abstracts/dogs.component';
+import { DogStatus, DoggyService } from '../shared/contracts/doggy.service';
+import { AdoptionDogItem } from '../shared/contracts/models/adoption-dog-item.model';
 
 @Component({
   selector: 'app-adoptions',
   templateUrl: './adoptions.component.html',
   styleUrls: ['./adoptions.component.scss']
 })
-export class AdoptionsComponent extends DogsComponent implements OnInit {
-  constructor(client: httpClient){
-    super(client.get<{ dogs: DogItem[]}>('/dogs/adoptions'))
+export class AdoptionsComponent extends DogsComponent {
+  constructor(service: DoggyService<AdoptionDogItem>) {
+    super();
+    service.getDogs(DogStatus.Adopted).subscribe(dogs => this.dogs = dogs);
   }
 }

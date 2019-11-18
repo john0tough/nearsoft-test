@@ -1,30 +1,40 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { httpClient } from './shared/contracts/http-client.service';
-import { DogsHttpClient } from './shared/dogs-http-client.service';
 import { MainPageComponent } from './main-page/main-page.component';
 import { DogItemComponent } from './dog-item/dog-item.component';
 import { AdoptionsComponent } from './adoptions/adoptions.component';
-
+import { CheckoutComponent } from './checkout/checkout.component';
+import { AdoptDogItemComponent } from './adopt-dog-item/adopt-dog-item.component';
+import { CheckoutDogItemComponent } from './checkout-dog-item/checkout-dog-item.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { APIClient } from './shared/contracts/http-client.service';
+import { DoggyService } from './shared/contracts/doggy.service';
+import { CheckoutService } from './shared/contracts/checkout.service';
+import { DogsHttpClient } from './shared/dogs-http-client.service';
+import { AdoptionDoggyService } from './shared/adoption-doggy.service';
+import { AdoptionCheckoutService } from './shared/adoption-checkout.service';
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainPageComponent,
-    DogItemComponent,
-    AdoptionsComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  providers: [
-    { provide: httpClient, useClass: DogsHttpClient }
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        MainPageComponent,
+        DogItemComponent,
+        AdoptionsComponent,
+        CheckoutComponent,
+        AdoptDogItemComponent,
+        CheckoutDogItemComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule
+    ],
+    providers: [
+        { provide: APIClient, useClass: DogsHttpClient },
+        { provide: DoggyService, useClass: AdoptionDoggyService },
+        { provide: CheckoutService, useClass: AdoptionCheckoutService },
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

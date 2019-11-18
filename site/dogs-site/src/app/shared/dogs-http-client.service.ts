@@ -1,16 +1,9 @@
-import { httpClient } from './contracts/http-client.service';
+import { APIClient } from './contracts/http-client.service';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 @Injectable()
-export class DogsHttpClient implements httpClient {
-
-    // private httpOptions = {
-    //     headers: new HttpHeaders({
-    //       'Content-Type':  'application/json',
-    //       'Authorization': 'v1Vld/Dr34m5'
-    //     })
-    //   };
+export class DogsHttpClient implements APIClient {
     private url = 'http://localhost:3333/api';
     constructor(private http: HttpClient) {}
 
@@ -21,7 +14,12 @@ export class DogsHttpClient implements httpClient {
           }
         });
     }
-    post<T>(resource: string, params: any): Observable<T> {
-      throw new Error("Method not implemented.");
+
+    post<T>(resource: string, params: unknown): Observable<T> {
+      return this.http.post<T>(`${this.url}${resource}`, params, {
+        headers: {
+          ['api_key']: 'v1Vld/Dr34m5'
+        }
+      });
     }
 }

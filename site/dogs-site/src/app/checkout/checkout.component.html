@@ -1,0 +1,5 @@
+<h3>Your new friends!</h3>
+<div *ngFor="let item of checkout">
+    <app-checkout-dog-item [dog]="item"></app-checkout-dog-item>
+</div>
+<button (click)="onAdoptDogs(checkout)">SUBMIT ADOPTION!</button>

@@ -6,11 +6,7 @@ import { DogItem } from '../shared/contracts/models/dog-item.model';
   templateUrl: './dog-item.component.html',
   styleUrls: ['./dog-item.component.scss']
 })
-export class DogItemComponent implements OnInit {
+export class DogItemComponent {
   @Input() dog: DogItem;
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

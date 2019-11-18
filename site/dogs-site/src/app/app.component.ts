@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { httpClient } from './shared/contracts/http-client.service';
+import { APIClient } from './shared/contracts/http-client.service';
 import { DogItem } from './shared/contracts/models/dog-item.model';
 
 @Component({

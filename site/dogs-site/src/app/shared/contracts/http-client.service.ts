@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 
-export abstract class httpClient {
+export abstract class APIClient {
     abstract get<T>(resource: string): Observable<T>;
-    abstract post<T>(resource: string, params: any): Observable<T>;
+    abstract post<T>(resource: string, params: unknown): Observable<T>;
 }
